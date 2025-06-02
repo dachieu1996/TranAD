@@ -1,7 +1,7 @@
 pandas
 tqdm
 matplotlib
-dgl
+dgl==0.6.1
 numpy
 SciencePlots
 scikit-learn
