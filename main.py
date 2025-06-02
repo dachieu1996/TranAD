@@ -126,6 +126,8 @@ def backprop(epoch, model, data, dataO, optimizer, scheduler, training = True):
 				ae1 = model(d)
 				y_pred.append(ae1[-1])
 				ae1s.append(ae1)
+			ae1s = [x[0] for x in ae1s]
+			y_pred = [x[0] for x in y_pred]
 			ae1s, y_pred = torch.stack(ae1s), torch.stack(y_pred)
 			loss = torch.mean(l(ae1s, data), axis=1)
 			return loss.detach().numpy(), y_pred.detach().numpy()
